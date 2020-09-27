@@ -10,6 +10,8 @@ public class UserRegistration {
         String fName=sc.next();
         System.out.println("Enter the last Name : ");
         String lName=sc.next();
+        System.out.println("Enter the Email : ");
+        String email=sc.next();
 
         String pattern = "[A-Z]{1}[a-z]{2,}";
         Pattern p = Pattern.compile(pattern);
@@ -29,5 +31,15 @@ public class UserRegistration {
             System.out.println("Invalid Last Name");
         }
 
+        pattern="\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b";
+        p = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
+        m = p.matcher(email);
+
+        if(m.matches()) {
+            System.out.println("Valid Email");
+        }
+        else{
+            System.out.println("Invalid Email");
+        }
     }
 }
