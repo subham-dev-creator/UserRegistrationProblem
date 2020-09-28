@@ -31,7 +31,7 @@ public class UserRegistration {
     }
 
     static Boolean passValidation(String s){
-        String pattern=".{8,}";
+        String pattern= "^(?=.*[A-Z])+.{8,}$";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(s);
 
