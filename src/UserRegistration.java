@@ -12,6 +12,8 @@ public class UserRegistration {
         String lName=sc.next();
         System.out.println("Enter the Email : ");
         String email=sc.next();
+        System.out.println("Enter the Mobile Number : ");
+        String Mob=sc.next();
 
         String pattern = "[A-Z]{1}[a-z]{2,}";
         Pattern p = Pattern.compile(pattern);
@@ -41,5 +43,17 @@ public class UserRegistration {
         else{
             System.out.println("Invalid Email");
         }
+
+        pattern="[0-9]{2}+[0-9]{10}";
+        p = Pattern.compile(pattern);
+        m = p.matcher(Mob);
+
+        if(m.matches()) {
+            System.out.println("Valid Mobile NUmber ");
+        }
+        else{
+            System.out.println("Invalid Mobile Number ");
+        }
+
     }
 }
